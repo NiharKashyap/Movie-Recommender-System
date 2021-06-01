@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Select Movies</title>
+        <link rel="stylesheet" type="text/css" href="static/css/home.css">
+    </head>
+    <body>
+        <h1>WELCOME TO RECOM</h1>
+        <h1>Select a movie of your choice</h1>
+        <h2>You will get a list of recommended movies</h2>
+    
+        <div class="row">
+            {% for t in data %}
+            <div class="col">
+            
+            <p>{{t|upper}}</p>
+            <button><a href="/result/{{t}}">Get Recommendations</a></button>
+         
+            </div>
+            {% endfor %}
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,43 @@
+body
+{
+	background: #553D67;
+	text-align: center;
+	color: #F64C72;
+	font-family: Georgia;
+}
+a
+{
+	text-decoration: none;
+	font-family: Georgia;
+}
+
+a:link, a:visited 
+{
+    color: white;
+    font-family: Georgia;
+}
+
+button
+{
+	background: #99738E;
+	color: white;
+
+}
+.row {
+  margin-top: 15em;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.col
+{
+	flex: 1;
+	padding: 1em;
+	align-self: flex-end;
+}
+.movies
+{
+	margin: 15px;
+	max-width:100px; 
+	max-height: 100px;
+}

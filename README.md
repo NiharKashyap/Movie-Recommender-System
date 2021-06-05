@@ -1,5 +1,13 @@
 This repo contains the work I did on a recommendation system while learning Data Science.
 
+Folder Structure:
+
+Notebooks: Notebooks used in data processing and training
+
+Reading: Papers and other study material pertaining to recommender systems
+
+RecoM: Actual flask web app
+
 Description of the notebooks
 
 1. Movie_recommender_normal: This approach uses cosine similarity to recommend movies. Though reccommendations are satisfactory the size of the similarity matrix is too large (about 3.84 GB) to be commercially feasible

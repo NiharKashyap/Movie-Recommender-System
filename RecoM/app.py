@@ -48,7 +48,7 @@ mat = np.load('Sim.npy')
 def index():
     movie = Movie()
         
-    data = df['movie_title']
+    data = list(df['movie_title'])
 
     #for title in data:
         #search = movie.search(title)
@@ -63,5 +63,6 @@ def result(name):
     pred = Predict(mat)
     movie_index = pred.get_index_from_title(name)
     arr = pred.get_recommendations(movie_index, name)
+    data = {'name':name, 'arr':arr}
     
-    return render_template('result.html', data = arr)
+    return render_template('result.html', data = data)

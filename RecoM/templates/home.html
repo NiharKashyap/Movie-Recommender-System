@@ -2,22 +2,31 @@
     <head>
         <title>Select Movies</title>
         <link rel="stylesheet" type="text/css" href="static/css/home.css">
+        <script type="text/javascript">
+            var films = {{data|tojson}};
+        </script>
     </head>
     <body>
         <h1>WELCOME TO RECOM</h1>
         <h1>Select a movie of your choice</h1>
         <h2>You will get a list of recommended movies</h2>
-    
+        <input type="text" id="searchBox" placeholder="Search..." onkeyup="search(films)">
+        <div id="searchResult">
+            <p>Your results will show here</p>
+        </div>
+        <div class="illus">   
+            <img src="/static/images/undraw_movie_night_fldd.svg" alt="">
+        </div>
+        <!--
         <div class="row">
             {% for t in data %}
             <div class="col">
-            
-            <p>{{t|upper}}</p>
-            <button><a href="/result/{{t}}">Get Recommendations</a></button>
-         
+                    <p>{{t|upper}}</p>
+                    <button><a href="/result/{{t}}">Get Recommendations</a></button>
             </div>
             {% endfor %}
         </div>
-        
+        -->
+        <script type="text/javascript" src = "static/js/home.js" ></script>
     </body>
 </html>

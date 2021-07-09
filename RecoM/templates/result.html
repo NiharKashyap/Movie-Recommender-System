@@ -3,11 +3,19 @@
 <head>
 	<meta charset="utf-8">
 	<title>Result</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/result.css">
 </head>
 <body>
-	<h3>Here are your top 10 recommendations</h3>
-	{% for d in data %}
-	<p>{{d|upper}}</p>
-	{% endfor %}
+	<h3>Here are your top 10 recommendations for {{data.name}}</h3>
+	<div class="row">
+		{% for d in data.arr %}
+		<div class="col">
+			
+			<p>{{d|upper}}</p>
+			
+		</div>
+		{% endfor %}
+	</div>
+	
 </body>
 </html>

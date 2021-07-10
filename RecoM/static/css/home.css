@@ -1,3 +1,10 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Montserrat', sans-serif;
+}
+
 body
 {
 	background: #f7f7f7;
@@ -5,6 +12,24 @@ body
 	color: #F64C72;
 	font-family: Georgia;
 }
+
+.nav
+{
+	display: flex;
+	background-color: black;
+	width: 100%;
+	height: 50px;
+	justify-content: flex-end;
+	margin-right: 20px;
+}
+.nav input, a
+{
+	margin-right: 50px;
+	margin-top: 10px;
+	border-radius: 10%;
+	padding: 5px;
+}
+
 a
 {
 	text-decoration: none;
@@ -17,12 +42,6 @@ a:link, a:visited
     font-family: Georgia;
 }
 
-button
-{
-	background: #99738E;
-	color: white;
-
-}
 .row {
   margin-top: 15em;
   display: flex;
@@ -43,17 +62,65 @@ button
 }
 #searchResult
 {
+	background-color: black;
 	position: absolute;
 	display: flex;
 	flex-direction: column;
 	margin: 20px;
 	align-items: center;
 	z-index: 20;
-	left: 40%;
+	left: 55%;
+	top: 4%;
 }
+
+#searchResult button
+{
+	display: flex;
+	height: 50px;
+	width: 100%;
+	background: #000000;
+	color: white;
+	
+}
+
+#searchResult button:hover
+{
+	background: rgb(48, 44, 44);
+}
+
+#searchResult button img
+{
+	display: flex;
+	align-self: flex-start;
+	width: 50px;
+	height: 50px;
+}
+
 .illus
 {
 	left: 20%;
 	position: fixed;
 	z-index: -1;
+	filter: blur(8px);
+}
+
+/*
+#searchBox
+{
+	width: 30%;
+	border: 2px solid black;
+	border-radius: 10% 10% 10% 10%;
+	padding: 20px;
+}
+*/
+
+#searchBox:focus
+{
+	outline: none;
+}
+
+.popular
+{
+	position: relative;
+	top: 40vh;
 }

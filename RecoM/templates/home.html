@@ -2,17 +2,27 @@
     <head>
         <title>Select Movies</title>
         <link rel="stylesheet" type="text/css" href="static/css/home.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
         <script type="text/javascript">
             var films = {{data|tojson}};
         </script>
     </head>
     <body>
-        <h1>WELCOME TO RECOM</h1>
-        <h1>Select a movie of your choice</h1>
-        <h2>You will get a list of recommended movies</h2>
-        <input type="text" id="searchBox" placeholder="Search..." onkeyup="search(films)">
+        <div class="nav">
+            <input type="text" id="searchBox" placeholder=" Quick Search..." onkeyup="search(films)"><!--<i class="fas fa-search"></i>-->
+                <a href="">Home</a>
+                <a href="">Hit list</a>
+                <a href="/login">Login</a>
+                <a href="">Sign up</a>
+        </div>
+        <div class="left">
+            <h1>WELCOME TO RECOM</h1>
+        </div>   
+        <div class="popular">
+            <h3><i class="fas fa-star"></i> Trending Now</h3>
+        </div>
         <div id="searchResult">
-            <p>Your results will show here</p>
+            
         </div>
         <div class="illus">   
             <img src="/static/images/undraw_movie_night_fldd.svg" alt="">

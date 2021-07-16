@@ -3,7 +3,9 @@ Author: Nihar Kashyap
 Changelog:
 Date: 15/7/21
 Time: 12:50 AM
-Changes: Session variable to store history, shows 6 from each history, won't add redundant history
+Changes: Session variable to store history,
+        shows 6 from each history,
+        won't add redundant history
 
 '''
 

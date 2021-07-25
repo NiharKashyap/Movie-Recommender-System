@@ -13,8 +13,11 @@ Changes: Session variable to store history,
 from flask import Flask
 from flask import render_template
 from flask.globals import session
+
 import pandas as pd
 import numpy as np
+import datetime
+
 from tmdbv3api import TMDb
 from tmdbv3api import Movie
 
@@ -89,12 +92,14 @@ class Predict:
 
 class CollectData:
     
-    def __init__(self, df):
-        self.clicks = df
+    def __init__(self):
+        self.clicks = 'hi'
     
     def write_movie(self,title):
-        self.clicks.loc[session['username']][title]+=1
-        print('Current cLicks for {} {}'.format(title, self.clicks.loc[session['username']][title]))
+        if 'username' in session:
+            line = {'user': [session['username']], 'movie':[title], 'date':datetime.datetime.now().date()}
+            df = pd.DataFrame(line)
+            df.to_csv('user_movie.csv', mode='a', index=False, header=False)
         
 
 
@@ -104,8 +109,8 @@ app = Flask(__name__)
 app.secret_key = "abc"  
 
 df = pd.read_csv('main_data.csv')
-user_mov = pd.read_csv('user_movie.csv')
-user_mov.set_index('User', inplace=True) 
+#user_mov = pd.read_csv('user_movie.csv')
+#user_mov.set_index('User', inplace=True) 
 mat = np.load('Sim.npy')
 
 @app.route('/')
@@ -138,8 +143,8 @@ def result(name):
         movie_list.append(name)
         session['movie_arr'] = movie_list
         
-    #cld = CollectData(user_mov)
-    #cld.write_movie(name)
+    cld = CollectData()
+    cld.write_movie(name)
     pred = Predict(mat)
     #movie_index = pred.get_index_from_title(name)
     
